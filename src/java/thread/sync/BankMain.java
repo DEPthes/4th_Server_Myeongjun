@@ -1,6 +1,6 @@
-package thread.sync;
+package java.thread.sync;
 
-import static util.ThreadUtils.sleep;
+import static java.util.ThreadUtils.sleep;
 
 public class BankMain {
 

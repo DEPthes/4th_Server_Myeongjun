@@ -1,17 +1,17 @@
-package thread.sync;
+package java.thread.sync;
 
-import static util.ThreadUtils.sleep;
+import static java.util.ThreadUtils.sleep;
 
-public class BankAccountV1 implements BankAccount {
+public class BankAccountV2 implements BankAccount {
 
-    volatile private int balance;
+    private int balance;
 
-    public BankAccountV1(int initialBalance) {
+    public BankAccountV2(int initialBalance) {
         this.balance = initialBalance;
     }
 
     @Override
-    public boolean withdraw(int amount) {
+    public synchronized boolean withdraw(int amount) {
         System.out.println("거래 시작: " + getClass().getSimpleName());
 
         if (balance < amount) { // 잔액이 출금액보다 부족하면 false 반환
@@ -29,7 +29,7 @@ public class BankAccountV1 implements BankAccount {
     }
 
     @Override
-    public int getBalance() {
+    public synchronized int getBalance() {
         return balance;
     }
 }
