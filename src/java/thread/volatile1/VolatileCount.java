@@ -1,8 +1,8 @@
-package thread.volatile1;
+package java.thread.volatile1;
 
-import static util.ThreadUtils.sleep;
+import static java.util.ThreadUtils.*;
 
-public class VolatileFlag {
+public class VolatileCount {
 
     public static void main(String[] args) {
         Task task = new Task();
@@ -14,7 +14,7 @@ public class VolatileFlag {
         System.out.println("flag를 false로 변경 시도");
         task.flag = false;
         System.out.println("flag = " + task.flag);
-        System.out.println("main 종료");
+        System.out.println("spring.main 종료");
     }
 
     static class Task implements Runnable {
